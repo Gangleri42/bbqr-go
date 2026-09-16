@@ -3,7 +3,7 @@ package bbqr
 import (
 	"fmt"
 
-	df "github.com/Gangleri42/BBQr/go/internal/deflate"
+	df "github.com/Gangleri42/bbqr-go/internal/deflate"
 )
 
 // deflate compresses data as a raw DEFLATE stream (no zlib header)

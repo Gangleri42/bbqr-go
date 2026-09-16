@@ -5,7 +5,7 @@
 # Emit tables.go for package qr from pyqrcode's tables, so the encoder
 # and its test oracle share one source of truth.
 #
-#   ../../../python/ENV/bin/python gen_tables.py > ../tables.go && gofmt -w ../tables.go
+#   $BBQR/python/ENV/bin/python gen_tables.py > ../tables.go && gofmt -w ../tables.go
 #
 from pyqrcode import tables
 

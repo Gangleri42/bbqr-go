@@ -7,7 +7,7 @@
 # of its module matrix (rows of 0/1 characters, joined). Small symbols
 # also carry the full matrix so a failure is readable.
 #
-#   ../../../python/ENV/bin/python gen_vectors.py > vectors.json
+#   $BBQR/python/ENV/bin/python gen_vectors.py > vectors.json
 #
 import hashlib, json, random
 import pyqrcode

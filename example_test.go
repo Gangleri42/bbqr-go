@@ -3,7 +3,7 @@ package bbqr_test
 import (
 	"fmt"
 
-	"github.com/Gangleri42/BBQr/go/bbqr"
+	"github.com/Gangleri42/bbqr-go"
 )
 
 func Example() {

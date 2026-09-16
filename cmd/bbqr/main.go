@@ -37,9 +37,9 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/Gangleri42/BBQr/go/bbqr"
-	"github.com/Gangleri42/BBQr/go/internal/apng"
-	"github.com/Gangleri42/BBQr/go/qr"
+	"github.com/Gangleri42/bbqr-go"
+	"github.com/Gangleri42/bbqr-go/internal/apng"
+	"github.com/Gangleri42/bbqr-go/qr"
 )
 
 func main() {

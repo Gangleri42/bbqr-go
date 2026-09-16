@@ -43,11 +43,11 @@ func TestMakeDecodeText(t *testing.T) {
 }
 
 func TestDetectAndPrettyPrint(t *testing.T) {
-	psbt, err := os.ReadFile("../../../test_data/1in2out.psbt")
+	psbt, err := os.ReadFile("testdata/1in2out.psbt")
 	if err != nil {
 		t.Fatal(err)
 	}
-	out, stderr, err := runCLI(t, nil, "make", "../../../test_data/1in2out.psbt", "-v", "20")
+	out, stderr, err := runCLI(t, nil, "make", "testdata/1in2out.psbt", "-v", "20")
 	if err != nil {
 		t.Fatal(err)
 	}

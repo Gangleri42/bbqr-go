@@ -6,7 +6,7 @@ import (
 	"slices"
 	"testing"
 
-	"github.com/Gangleri42/BBQr/go/internal/gf256"
+	"github.com/Gangleri42/bbqr-go/internal/gf256"
 )
 
 func TestLagrange(t *testing.T) {

@@ -287,7 +287,7 @@ type parityVector struct {
 // TestParityVectors pins Split, parity parts included, to the vectors
 // the Python reference generated, which the JS tests check as well.
 func TestParityVectors(t *testing.T) {
-	raw, err := os.ReadFile("../../test_data/parity-vectors.json")
+	raw, err := os.ReadFile("testdata/parity-vectors.json")
 	if err != nil {
 		t.Fatal(err)
 	}

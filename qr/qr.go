@@ -10,7 +10,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/Gangleri42/BBQr/go/internal/gf256"
+	"github.com/Gangleri42/bbqr-go/internal/gf256"
 )
 
 // Level is the error correction level.

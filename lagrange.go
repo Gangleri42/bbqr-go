@@ -4,7 +4,7 @@ import (
 	"maps"
 	"slices"
 
-	"github.com/Gangleri42/BBQr/go/internal/gf256"
+	"github.com/Gangleri42/bbqr-go/internal/gf256"
 )
 
 // The parity arithmetic. For each byte position, part i of a series

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Generate bbqr/testdata/vectors.json from the Python reference.
+"""Generate testdata/vectors.json from the Python reference.
 
-Development tool only; not run in CI. The reference is python/ in this
-repository (BBQR_REF points elsewhere) and needs pyqrcode:
+Development tool only; not run in CI. The reference is the python/
+directory of a BBQr checkout, a sibling clone by default (BBQR_REF
+points elsewhere), and needs pyqrcode:
 
     python3 -m venv venv && venv/bin/pip install pyqrcode
     venv/bin/python gen_vectors.py > vectors.json
@@ -13,7 +14,7 @@ import random
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-REF = os.environ.get("BBQR_REF", os.path.join(HERE, "..", "..", "..", "python"))
+REF = os.environ.get("BBQR_REF", os.path.join(HERE, "..", "..", "BBQr", "python"))
 sys.path.insert(0, REF)
 
 from bbqr.split import split_qrs  # noqa: E402

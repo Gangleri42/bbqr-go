@@ -5,41 +5,17 @@ import (
 	"math/rand"
 	"slices"
 	"testing"
-)
 
-func TestGFTables(t *testing.T) {
-	// 2 generates the field: every nonzero byte appears exactly once.
-	seen := make([]bool, 256)
-	for _, x := range gfExp[:255] {
-		if x == 0 || seen[x] {
-			t.Fatalf("exp table repeats or hits zero at %d", x)
-		}
-		seen[x] = true
-	}
-	if !slices.Equal(gfExp[255:510], gfExp[:255]) {
-		t.Fatal("exp table second half differs")
-	}
-	for a := 1; a < 256; a++ {
-		if gfMul(byte(a), gfDiv(1, byte(a))) != 1 {
-			t.Fatalf("%d times its inverse is not 1", a)
-		}
-		if gfDiv(gfMul(byte(a), 77), 77) != byte(a) {
-			t.Fatalf("division does not undo multiplication for %d", a)
-		}
-	}
-	// x^8 = x^4 + x^3 + x^2 + 1, the 0x11D reduction.
-	if gfMul(0x80, 2) != 0x1D {
-		t.Fatalf("0x80 * 2 = %#x, want 0x1d", gfMul(0x80, 2))
-	}
-}
+	"github.com/Gangleri42/BBQr/go/internal/gf256"
+)
 
 func TestLagrange(t *testing.T) {
 	// Weights rebuild a known polynomial f(x) = 7x^2 + 3x + 9.
-	f := func(x byte) byte { return gfMul(7, gfMul(x, x)) ^ gfMul(3, x) ^ 9 }
+	f := func(x byte) byte { return gf256.Mul(7, gf256.Mul(x, x)) ^ gf256.Mul(3, x) ^ 9 }
 	xs := []byte{5, 17, 200}
 	var acc byte
 	for i, w := range lagrangeBasis(xs)(42) {
-		acc ^= gfMul(w, f(xs[i]))
+		acc ^= gf256.Mul(w, f(xs[i]))
 	}
 	if acc != f(42) {
 		t.Fatalf("interpolated %d, want %d", acc, f(42))

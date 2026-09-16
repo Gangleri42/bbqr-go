@@ -96,6 +96,13 @@ var versionChars = [MaxVersion]int{
 	2677, 2840, 3009, 3183, 3351, 3537, 3729, 3927, 4087, 4296,
 }
 
+// VersionChars returns the number of alphanumeric characters a QR code
+// of the given version, 1 to MaxVersion, holds at error correction
+// level L.
+func VersionChars(version int) int {
+	return versionChars[version-1]
+}
+
 // Header is the parsed header of a single BBQr part.
 type Header struct {
 	Encoding byte // EncHex, EncBase32 or EncZlib
